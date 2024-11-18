@@ -1,0 +1,130 @@
+package kaylibkit.kEnums
+
+/**
+ * Keyboard keys (US keyboard layout)
+ *
+ * Use GetKeyPressed() to allow redefining
+ *
+ * required keys for alternative layouts
+ */
+enum class KeyboardKey(val key: Int) {
+    // Alphanumeric keys
+    APOSTROPHE(39),
+    COMMA(44),
+    MINUS(45),
+    PERIOD(46),
+    SLASH(47),
+    NUMBER0(48),
+    NUMBER1(49),
+    NUMBER2(50),
+    NUMBER3(51),
+    NUMBER4(52),
+    NUMBER5(53),
+    NUMBER6(54),
+    NUMBER7(55),
+    NUMBER8(56),
+    NUMBER(57),
+    SEMICOLON(59),
+    EQUAL(61),
+    A(65),
+    B(66),
+    C(67),
+    D(68),
+    E(69),
+    F(70),
+    G(71),
+    H(72),
+    I(73),
+    J(74),
+    K(75),
+    L(76),
+    M(77),
+    N(78),
+    O(79),
+    P(80),
+    Q(81),
+    R(82),
+    S(83),
+    T(84),
+    U(85),
+    V(86),
+    W(87),
+    X(88),
+    Y(89),
+    Z(90),
+
+    // Function keys
+    SPACE(32),
+    ESCAPE(256),
+    ENTER(257),
+    TAB(258),
+    BACKSPACE(259),
+    INSERT(260),
+    DELETE(261),
+    RIGHT(262),
+    LEFT(263),
+    DOWN(264),
+    UP(265),
+    PAGEUP(266),
+    PAGEDOWN(267),
+    HOME(268),
+    END(269),
+    CAPSLOCK(280),
+    SCROLLLOCK(281),
+    NUMLOCK(282),
+    PRINTSCREEM(283),
+    PAUSE(284),
+    FUNCTION1(290),
+    FUNCTION2(291),
+    FUNCTION3(292),
+    FUNCTION4(293),
+    FUNCTION5(294),
+    FUNCTION6(295),
+    FUNCTION7(296),
+    FUNCTION8(297),
+    FUNCTION9(298),
+    FUNCTION10(299),
+    FUNCTION11(300),
+    FUNCTION12(301),
+    LEFTSHIFT(340),
+    LEFTCONTROL(341),
+    LEFTALT(342),
+    LEFTSUPER(343),
+    RIGHTSHIFT(344),
+    RIGHTCONTROL(345),
+    RIGHTALT(346),
+    RIGHTSUPER(347),
+    KBMENU(348),
+    LEFTBRACKET(91),
+    BACKSLASH(92),
+    RIGHTBRACKET(93),
+    GRAVE(96),
+
+    // Keypad keys
+    KEYPAD0(320),
+    KEYPAD1(321),
+    KEYPAD2(322),
+    KEYPAD3(323),
+    KEYPAD4(324),
+    KEYPAD5(325),
+    KEYPAD6(326),
+    KEYPAD7(327),
+    KEYPAD8(328),
+    KEYPAD9(329),
+    KEYPADDECIMAL(330),
+    KEYPADDIVIDE(331),
+    KEYPADMULTIPLY(332),
+    KEYPADSUBTRACT(333),
+    KEYPADADD(334),
+    KEYPADENTER(335),
+    KEYPADEQUAL(336),
+    UNKNOWN(-1);
+
+    // Android key buttons
+    val ANDROIDBACK:Int = 4
+    val ANDROIDMENU:Int = 82
+    val ANDROIDVOLUMEUP:Int = 24
+    val ANDROIDVOLUMEDOWN:Int = 25
+
+
+}

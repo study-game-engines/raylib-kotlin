@@ -1,0 +1,73 @@
+headers = raylib.h raymath.h rcamera.h
+package = kaylibc
+staticLibraries = libraylib.a
+libraryPaths.osx = src/nativeInterop/cinterop/lib/osx
+libraryPaths.linux = src/nativeInterop/cinterop/lib/linux
+libraryPaths.mingw = src/nativeInterop/cinterop/lib/mingw
+
+compilerOpts = -Isrc/nativeInterop/cinterop/include
+linkerOpts.mingw = -lwinmm -lgdi32 -lopengl32 -lkernel32 -Wl,--allow-multiple-definition
+linkerOpts.osx = -framework CoreVideo -framework IOKit -framework Cocoa -framework GLUT -framework OpenGL
+
+
+---
+static Color lightGray = (Color){ 200, 200, 200, 255 };
+static Color gray = (Color){ 130, 130, 130, 255 };
+static Color darkGray = (Color){ 80, 80, 80, 255 };
+static Color yellow = (Color){ 253, 249, 0, 255 };
+static Color gold = (Color){ 255, 203, 0, 255 };
+static Color orange = (Color){ 255, 161, 0, 255 };
+static Color pink = (Color){ 255, 109, 194, 255 };
+static Color red = (Color){ 230, 41, 55, 255 };
+static Color maroon = (Color){ 190, 33, 55, 255 };
+static Color green = (Color){ 0, 228, 48, 255 };
+static Color lime = (Color){ 0, 158, 47, 255 };
+static Color darkGreen = (Color){ 0, 117, 44, 255 };
+static Color skyBlue = (Color){ 102, 191, 255, 255 };
+static Color blue = (Color){ 0, 121, 241, 255 };
+static Color darkBlue = (Color){ 0, 82, 172, 255 };
+static Color purple = (Color){ 200, 122, 255, 255 };
+static Color violet = (Color){ 135, 60, 190, 255 };
+static Color darkPurple = (Color){ 112, 31, 126, 255 };
+static Color beige = (Color){ 211, 176, 131, 255 };
+static Color brown = (Color){ 127, 106, 79, 255 };
+static Color darkBrown = (Color){ 76, 63, 47, 255 };
+static Color white = (Color){ 255, 255, 255, 255 };
+static Color black = (Color){ 0, 0, 0, 255 };
+static Color blank = (Color){ 0, 0, 0, 0 };
+static Color magenta = (Color){ 255, 0, 255, 255 };
+static Color rayWhite = (Color){ 245, 245, 245, 255 };
+
+
+// CONSTRUCTOR HELPERS
+
+static inline struct BoneInfo BoneInfoConstructor(char name[32], int parent) {
+    struct BoneInfo r = { name[32], parent };
+    return r;
+}
+
+static inline struct Material MaterialConstructor(Shader shader, MaterialMap *maps, float params[4]) {
+    struct Material r = { shader, maps, params[4] };
+    return r;
+}
+
+static inline struct Sound SoundConstructor(AudioStream stream, unsigned int frameCount) {
+    struct Sound r = { stream, frameCount };
+    return r;
+}
+
+static inline struct Music MusicConstructor(AudioStream stream, unsigned int frameCount, bool looping, int ctxType, void *ctxData) {
+    struct Music r = { stream, frameCount, looping, ctxType, ctxData };
+    return r;
+}
+
+static inline struct VrDeviceInfo VrDeviceInfoConstructor(int hResolution, int vResolution, float hScreenSize, float vScreenSize, float vScreenCenter, float eyeToScreenDistance, float lensSeparationDistance, float interpupillaryDistance, float lensDistortionValues[4], float chromaAbCorrection[4]) {
+    struct VrDeviceInfo r = { hResolution, vResolution, hScreenSize, vScreenSize, vScreenCenter, eyeToScreenDistance, lensSeparationDistance, interpupillaryDistance, lensDistortionValues[4], chromaAbCorrection[4] };
+    return r;
+}
+
+
+static inline struct VrStereoConfig VrStereoConfigConstructor(Matrix projection[2], Matrix viewOffset[2], float leftLensCenter[2], float rightLensCenter[2], float leftScreenCenter[2], float rightScreenCenter[2], float scale[2], float scaleIn[2]) {
+    struct VrStereoConfig r = { projection[2], viewOffset[2], leftLensCenter[2], rightLensCenter[2], leftScreenCenter[2], rightScreenCenter[2], scale[2], scaleIn[2] };
+    return r;
+}
